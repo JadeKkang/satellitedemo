@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    >
+
+    <com.example.satellite.SatelliteMenu
+        android:id="@+id/left_top"
+        android:layout_gravity="left|top"
+        app:orientation="left_top"
+        app:radius="100"
+        app:itemSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.satellite.SatelliteMenu
+        android:layout_gravity="left|bottom"
+        app:orientation="left_bottom"
+        app:radius="50"
+        app:itemSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.satellite.SatelliteMenu
+        android:id="@+id/right_top"
+        android:layout_gravity="right|top"
+        app:orientation="right_top"
+        app:radius="100"
+        app:isText="true"
+        app:textColor="#1546e9"
+        app:textSize="10sp"
+        app:itemSize="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.satellite.SatelliteMenu
+        android:layout_gravity="right|bottom"
+        app:orientation="right_bottom"
+        app:radius="50"
+        app:itemSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
