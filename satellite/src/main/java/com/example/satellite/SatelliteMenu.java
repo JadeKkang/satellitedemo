@@ -146,7 +146,7 @@ public class SatelliteMenu extends LinearLayout {
             ivAdd.setBackgroundResource(img[i]);
             TextView tvAdd = itemView.findViewById(R.id.tv_add);
 
-            tvAdd.setWidth((int) itemSize);
+            tvAdd.setWidth((int) itemSize+(int) textSize/2);
             tvAdd.setTextSize(textSize);
             tvAdd.setTextColor(textColor);
             if (isText){

@@ -10,14 +10,13 @@
 
     <com.example.satellite.SatelliteMenu
         android:id="@+id/left_top"
-        android:layout_gravity="left|top"
         app:orientation="left_top"
         app:radius="100"
-        app:itemSize="30dp"
+        app:itemSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
     <com.example.satellite.SatelliteMenu
-        android:layout_gravity="left|bottom"
         app:orientation="left_bottom"
         app:radius="50"
         app:itemSize="30dp"
@@ -25,7 +24,6 @@
         android:layout_height="match_parent" />
     <com.example.satellite.SatelliteMenu
         android:id="@+id/right_top"
-        android:layout_gravity="right|top"
         app:orientation="right_top"
         app:radius="100"
         app:isText="true"
@@ -35,9 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     <com.example.satellite.SatelliteMenu
-        android:layout_gravity="right|bottom"
+        android:id="@+id/right_bottom"
         app:orientation="right_bottom"
-        app:radius="50"
+        app:radius="100"
         app:itemSize="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
