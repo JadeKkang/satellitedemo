@@ -54,8 +54,8 @@ public class SatelliteMenu extends LinearLayout {
     private boolean isStart = true;//控制执行 放射动画还是收缩动画
     float mX = 0;
     float mY = 0;
-    private ImageView childAt;//itemView
-    private TextView childAt2;//itemView
+    private ImageView ivAdd;//itemView
+    private TextView tvAdd;//itemView
     private float textSize;
     private int textColor;
     private float itemSize;//子View 图片的 大小
@@ -196,22 +196,22 @@ public class SatelliteMenu extends LinearLayout {
         int childCount = llView.getChildCount();
         circlrR = (getWidth() / 2 - radius);
         for (int i = 0; i < childCount; i++) {
-            childAt = (ImageView) llView.getChildAt(i).findViewById(R.id.iv_add);
-            childAt2 = (TextView) llView.getChildAt(i).findViewById(R.id.tv_add);
+            ivAdd = (ImageView) llView.getChildAt(i).findViewById(R.id.iv_add);
+            tvAdd = (TextView) llView.getChildAt(i).findViewById(R.id.tv_add);
             switch (position) {
-                case 1:
+                case 1://按钮显示在左下，扩散子View应该是（x,y）-->(+,-)
                     mX = (float) (circlrR * (Math.cos(Math.PI / 2 / (img.length - 1) * i)));
                     mY = -(float) ((getWidth() / 2 - 50) * (Math.sin(Math.PI / 2 / (img.length - 1) * i)));
                     break;
-                case 2:
+                case 2://按钮显示在左上，扩散子View应该是（x,y）-->(+,+)
                     mX = (float) (circlrR * (Math.cos(Math.PI / 2 / (img.length - 1) * i)));
                     mY = (float) ((getWidth() / 2 - 50) * (Math.sin(Math.PI / 2 / (img.length - 1) * i)));
                     break;
-                case 3:
+                case 3://按钮显示在右下，扩散子View应该是（x,y）-->(-,-)
                     mX = -(float) (circlrR * (Math.cos(Math.PI / 2 / (img.length - 1) * i)));
                     mY = -(float) ((getWidth() / 2 - 50) * (Math.sin(Math.PI / 2 / (img.length - 1) * i)));
                     break;
-                case 4:
+                case 4://按钮显示在右下，扩散子View应该是（x,y）-->(-,+)
                     mX = -(float) (circlrR * (Math.cos(Math.PI / 2 / (img.length - 1) * i)));
                     mY = (float) ((getWidth() / 2 - 50) * (Math.sin(Math.PI / 2 / (img.length - 1) * i)));
                     break;
@@ -228,16 +228,16 @@ public class SatelliteMenu extends LinearLayout {
     private void startAnimator() {
         if (!isStart) {
             animator0 = ObjectAnimator.ofFloat(ivStart, "rotation", 45, 0);
-            animator = ObjectAnimator.ofFloat(childAt, "translationY", mY, 0);
-            animator1 = ObjectAnimator.ofFloat(childAt, "translationX", mX, 0);
-            animator2 = ObjectAnimator.ofFloat(childAt2, "translationY", mY, 0);
-            animator3 = ObjectAnimator.ofFloat(childAt2, "translationX", mX, 0);
+            animator = ObjectAnimator.ofFloat(ivAdd, "translationY", mY, 0);
+            animator1 = ObjectAnimator.ofFloat(ivAdd, "translationX", mX, 0);
+            animator2 = ObjectAnimator.ofFloat(tvAdd, "translationY", mY, 0);
+            animator3 = ObjectAnimator.ofFloat(tvAdd, "translationX", mX, 0);
         } else {
             animator0 = ObjectAnimator.ofFloat(ivStart, "rotation", 0, 45);
-            animator = ObjectAnimator.ofFloat(childAt, "translationY", 0, mY);
-            animator1 = ObjectAnimator.ofFloat(childAt, "translationX", 0, mX);
-            animator2 = ObjectAnimator.ofFloat(childAt2, "translationY", 0, mY);
-            animator3 = ObjectAnimator.ofFloat(childAt2, "translationX", 0, mX);
+            animator = ObjectAnimator.ofFloat(ivAdd, "translationY", 0, mY);
+            animator1 = ObjectAnimator.ofFloat(ivAdd, "translationX", 0, mX);
+            animator2 = ObjectAnimator.ofFloat(tvAdd, "translationY", 0, mY);
+            animator3 = ObjectAnimator.ofFloat(tvAdd, "translationX", 0, mX);
         }
         animator0.setDuration(300);
         animator0.start();
