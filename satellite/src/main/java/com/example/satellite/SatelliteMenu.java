@@ -81,7 +81,9 @@ public class SatelliteMenu extends LinearLayout {
             ivStartRes = array.getResourceId(R.styleable.MenuBt_bitmap, R.mipmap.heart);
             radius = array.getInteger(R.styleable.MenuBt_radius, 50);
             isText = array.getBoolean(R.styleable.MenuBt_isText, false);
-            textSize = array.getDimension(R.styleable.MenuBt_textSize, 12);
+
+            float size = array.getDimension(R.styleable.MenuBt_textSize, 12);
+            textSize = px2sp(context, size);
             itemSize = array.getDimension(R.styleable.MenuBt_itemSize, 45);
             textColor = array.getColor(R.styleable.MenuBt_textColor, ContextCompat.getColor(context,R.color.textColor));
         }
@@ -186,7 +188,10 @@ public class SatelliteMenu extends LinearLayout {
             llView.addView(itemView);
         }
     }
-
+    public  float px2sp(Context context, float pxValue) {
+            final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
+    }
     /**
      * 作者  韩晓康
      * 时间  2018/9/11 17:02
