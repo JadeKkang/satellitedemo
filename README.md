@@ -1,50 +1,52 @@
 # 效果展示
 ![](https://github.com/JadeKkang/satellitedemo/blob/master/image/state.gif)
 # 使用
-1.在项目gradle中添加<br>  
-allprojects {<br> 
-repositories {<br> 
-...<br> 
-maven { url 'https://jitpack.io' }<br> 
-}<br> 
-}<br> 
-2.添加依赖<br> 
- {'com.github.JadeKkang:satellitedemo:v1.0'}<br> 
-3.xml中使用<br> 
-左上<br> 
-<com.example.satellite.SatelliteMenu<br> 
-        android:id="@+id/left_top"<br> 
-        app:orientation="left_top"<br> 
-        app:radius="100"<br> 
-        app:itemSize="35dp"<br> 
-        android:layout_width="match_parent"<br> 
-        android:layout_height="match_parent" /><br> 
-左下<br> 	
-<com.example.satellite.SatelliteMenu<br> 
-        app:orientation="left_bottom"<br> 
-        app:radius="50"<br> 
-        app:itemSize="30dp"<br> 
-        android:layout_width="match_parent"<br> 
-        android:layout_height="match_parent" /><br> 
-右上<br> 	
-<com.example.satellite.SatelliteMenu<br> 
-        android:id="@+id/right_top"<br> 
-        app:orientation="right_top"<br> 
-        app:radius="100"<br> 
-        app:isText="true"<br> <br> 
-        app:textColor="#1546e9"<br> 
-        app:textSize="10sp"<br> 
-        app:itemSize="35dp"<br> 
-        android:layout_width="match_parent"<br> 
-        android:layout_height="match_parent" /><br> 
-右下<br>	
-<com.example.satellite.SatelliteMenu<br> 
-        android:id="@+id/right_bottom"<br> 
-        app:orientation="right_bottom"<br> 
-        app:radius="100"<br> 
-        app:itemSize="30dp"<br> 
-        android:layout_width="match_parent"<br> 
-        android:layout_height="match_parent" /><br> 
+    1.在项目gradle中添加
+      allprojects {
+        repositories { 
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+      } 
+    2.添加依赖
+      {
+        'com.github.JadeKkang:satellitedemo:v1.0'
+      }
+    3.xml中使用
+         左上<
+      <com.example.satellite.SatelliteMenu
+        android:id="@+id/left_top" 
+        app:orientation="left_top" 
+        app:radius="100"
+        app:itemSize="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> 
+         左下	
+      <com.example.satellite.SatelliteMenu
+        app:orientation="left_bottom"
+        app:radius="50"
+        app:itemSize="30dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" />
+        右上
+       <com.example.satellite.SatelliteMenu
+        android:id="@+id/right_top" 
+        app:orientation="right_top" 
+        app:radius="100"
+        app:isText="true"
+        app:textColor="#1546e9" 
+        app:textSize="10sp"
+        app:itemSize="35dp" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" />
+        右下
+        <com.example.satellite.SatelliteMenu 
+        android:id="@+id/right_bottom"
+        app:orientation="right_bottom"
+        app:radius="100"
+        app:itemSize="30dp" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> 
 # 自定义属性
 | 属性 | 值 | 描述 | 
 | ------------- |:-------------:| -----:| 
